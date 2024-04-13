@@ -8,7 +8,7 @@ const STORAGE_KEY = 'feedback-form-state';
 
 function onPageReload() {
 
-    const savedMessage = localStorage.getItem(STORAGE_KEY);
+    const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
     if (savedMessage) {
         emailEl.value = savedMessage.email;
         messageEL.value = savedMessage.message;
